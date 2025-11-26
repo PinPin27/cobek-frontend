@@ -1,0 +1,750 @@
+body, * {
+  font-family: 'Poppins', sans-serif;
+}
+#home {
+  padding-top: 100px !important;
+}
+
+
+/* ====== WARNA BRAND COBEK ====== */
+:root {
+  --bs-primary: #1904b9;   /* biru */
+  --bs-danger: #c00b0b;    /* merah */
+  --bs-primary-rgb: 25, 4, 185;
+  --bs-danger-rgb: 192, 11, 11;
+}
+
+/* ====== OVERRIDE BOOTSTRAP TEXT COLORS ====== */
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.text-danger {
+  color: var(--bs-danger) !important;
+}
+
+/* ====== OVERRIDE BOOTSTRAP BUTTON COLORS ====== */
+.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--bs-primary-rgb)) !important;
+  opacity: 0.85;
+}
+
+.btn-danger {
+  background-color: var(--bs-danger) !important;
+  border-color: var(--bs-danger) !important;
+}
+
+.btn-danger:hover {
+  background-color: rgb(var(--bs-danger-rgb)) !important;
+  opacity: 0.85;
+}
+
+/* ====== NAVBAR ACTIVE ====== */
+.navbar-nav .nav-link.active {
+    color: var(--bs-danger) !important;
+    font-weight: 600 !important;
+}
+
+
+/* Tinggikan navbar */
+.navbar {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  min-height: 90px; /* tinggi total navbar */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link,
+.navbar .btn {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.8rem !important;   
+  font-weight: 700 !important;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.navbar .btn-danger {
+  margin-left: 30px !important;
+  font-size: 1rem;
+  padding: 10px 25px;
+  border-radius: 30px;
+}
+
+.navbar .btn-danger {
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.navbar .btn-danger:hover {
+  background-color: #a00909;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(192, 11, 11, 0.30);
+}
+.btn-danger:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 12px rgba(192, 11, 11, 0.4);
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+}
+
+
+.hero-section {
+  position: relative;
+  overflow: hidden; /* supaya gambar tidak keluar area */
+  padding-top: 120px;   /* sesuaikan untuk mengimbangi navbar fixed */
+  margin-top: 94px !important;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 140px !important;
+  }
+}
+
+/* Tulisan Judul dan Paragraf */
+.hero-section h1 {
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+.hero-section p {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 20px;
+}
+
+/* BACKGROUND KIRI */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  background: url("../asset/home-kiri.png") no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+/* BACKGROUND KANAN */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 100%;
+  background: url("../asset/home-kanan.png") no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .hero-section::before,
+  .hero-section::after {
+    opacity: 0.4;
+    width: 100px;
+  }
+}
+
+/* Animasi */
+@keyframes navbarSlideDown {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar {
+  animation: navbarSlideDown 0.8s ease-out forwards;
+  animation-delay: 0.0s;
+}
+
+@keyframes bgSlideFadeLeft {
+  0% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bgSlideFadeRight {
+  0% {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* BG kiri */
+.hero-section::before {
+  animation: bgSlideFadeLeft 1s ease-in-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+/* BG kanan */
+.hero-section::after {
+  animation: bgSlideFadeRight 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes textSlideLeft {
+  0% {
+    transform: translateX(-120px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* teks paragraf */
+.hero-text h5 {
+  animation: textSlideLeft 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+/* H1 */
+.hero-text h1 {
+  animation: textSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+/* Paragraf */
+.hero-text p {
+  animation: textSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+/* Tombol */
+.hero-text a {
+  animation: fadeOnly 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+@keyframes fadeOnly {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* TOMBOL HOME (SAMA PERSIS DENGAN WEB LAMA) */
+.hero-text .btn {
+  background: #c00b0b !important;
+  color: #fff !important;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease !important;
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+  border: none !important;             
+  outline: none !important;
+}
+
+.hero-text .btn:hover {
+  background: #1904b9 !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(59, 78, 248, 0.3) !important;
+   border: none !important; 
+}
+
+/* dokter */
+@keyframes doctorSlideRight {
+  0% {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hero-image img {
+  animation: doctorSlideRight 0.7s ease-out forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+}
+
+/* ====== Section Obesitas ====== */
+/* SECTION OBESITAS */
+/* --- OBESITAS SECTION --- */
+/* ANIMASI FADE IN UP */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s ease;
+}
+
+.fade-in-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+#obesitasTitle span {
+    color: #1904b9 !important;
+}
+
+.obesitas-section {
+    padding: 100px 0;
+    background: #f4eded;
+    position: relative;
+}
+
+.obes-obesitas-img {
+    position: relative;
+    left: -50px;        /* geser ke kiri */
+    max-height: 550px;   /* biar tetap besar */
+    object-fit: contain;
+}
+
+.obesitas-card {
+    max-width: 900px;
+    min-height: 380px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 50px;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.12),
+        0 5px 15px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+
+/* --- Kartu Pengertian Lebih Ramping --- */
+.obesitas-card.info {
+    max-width: 700px;        /* lebih langsing */
+    padding: 40px 45px;
+    min-height: 250px;        /* lebih pendek */
+}
+
+/* Biar teks tetap enak dibaca */
+.obesitas-card.info p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+#obesitasContent p {
+    text-align: justify;
+}
+
+
+/* Panah di luar kartu */
+.obesitas-arrow {
+    position: absolute;
+    right: -100px;    /* geser keluar kanan */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrow-next {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    color: #444;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.arrow-next:hover {
+    color: #c00b0b;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* === Animasi Slide Ringan === */
+.obesitas-card {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+.obesitas-card.slide-left {
+    transform: translateX(20px); /* geser 20px */
+}
+
+/* ============ DATA SET SECTION ============ */
+/* WRAPPER */
+.dataset-section {
+  background: #f4eded;
+  padding: 120px 0 160px 0; /* tinggi super aman */
+  width: 100%;
+}
+
+.dataset-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+}
+.dataset-title {
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;   /* kecilin jarak bawah */
+  margin-top: -50px;     /* ini naikin judul ke atas */
+}
+
+.dataset-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 130px;  /* ⬅ untuk menurunkan posisi kartu putih */
+}
+
+
+/* === BOX PUTIH === */
+.ds-card {
+  z-index: 3;
+  width: 260px;
+  background: #f8f8f8;
+  padding: 28px 18px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  position: relative;
+  cursor: pointer;
+  
+  /* TAMBAHKAN BARIS INI MABOY 👇 */
+  transform-style: preserve-3d; 
+  /* Ini bikin elemen anaknya bisa diatur maju-mundur (3D) */
+
+  transform: translateY(0);
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease;
+}
+
+.ds-card img {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+.ds-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* === POPUP GRADIENT === */
+.ds-popup {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+
+  /* posisi awal: turun dikit */
+  transform: translateZ(-20px) translateX(-50%) translateY(10px);
+  opacity: 0;
+  width: 260px;
+  background: linear-gradient(90deg, #c00b0b, #c00b4a);
+  padding: 25px 20px;
+  color: white;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(255, 120, 120, 0.4);
+
+  pointer-events: auto;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);;
+}
+.ds-popup {
+    z-index: 1;  /* posisi awal tetap paling belakang */
+}
+.ds-card:hover .ds-popup,
+.ds-popup:hover {  
+  opacity: 1;
+  transform: translateZ(-20px) translateX(-50%) translateY(-190px);
+}
+
+.ds-popup h5 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.ds-popup p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* arrow bawah */
+.ds-arrow {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 15px solid #ffffff;
+  margin: 10px auto 0;
+}
+
+/* === HOVER === */
+.ds-card:hover {
+  transform: translateY(100px); /* box turun */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+}
+
+.ds-card:hover .ds-popup {
+  opacity: 1;
+  transform: translateZ(-20px) translateX(-50%) translateY(-190px);
+}
+
+/* === SECTION MULAI PREDIKSI === */
+.predict-section {
+  background: #161e88;
+  padding: 120px 0;
+}
+
+.predict-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* CARD HASIL PREDIKSI */
+.predict-result-card {
+  width: 400px;
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.predict-result-card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+/* CARD FORM */
+.predict-form-card {
+  width: 400px;
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.predict-form-card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #1904b9;
+  box-shadow: 0 0 6px rgba(25,4,185,0.3);
+}
+
+/* TOMBOL */
+.predict-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #c00b0b;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  margin-top: 10px;
+}
+
+.predict-btn:hover {
+  background: #1904b9;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(25,4,185,0.3);
+}
+
+.hasil-box {
+    padding: 25px 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.hasil-utama {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.kategori {
+    font-size: 30px;
+    font-weight: 700;
+    color: #c00b0b;
+}
+
+.bmi {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #333;
+}
+
+.hasil-saran h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #1904b9;
+}
+
+.hasil-saran ul {
+    padding-left: 20px;
+}
+
+.hasil-saran li {
+    margin-bottom: 6px;
+}
+/* =============================================
+   UPDATE VISUAL: IKON & WARNA KATEGORI
+============================================= */
+
+/* Wrapper ikon agar di tengah */
+.hasil-icon-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling Ikon */
+.hasil-icon {
+    width: 140px;
+    height: auto;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); 
+    animation: popUp 0.6s ease cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popUp {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* WARNA STATUS */
+.theme-green { color: #28a745 !important; }
+.theme-orange { color: #fd7e14 !important; }
+.theme-red { color: #dc3545 !important; }     /* Merah Biasa */
+.theme-darkred { color: #8b0000 !important; } /* Merah Gelap (Buat Type III) */
+
+/* =============================================
+   ANIMASI SCROLL MASUK (ENTRANCE)
+============================================= */
+
+/* 1. ANIMASI BOUNCE UP (UNTUK KARTU MODEL) */
+.animate-bounce-up {
+    opacity: 0;
+    transform: translateY(100px); /* Mulai dari bawah */
+    /* cubic-bezier ini yang bikin efek MEMANTUL (Bounce) */
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 2. ANIMASI SLIDE LEFT (UNTUK HASIL PREDIKSI) */
+.animate-slide-left {
+    opacity: 0;
+    transform: translateX(-100px); /* Mulai dari kiri */
+    transition: all 1s ease-out;
+}
+
+/* 3. ANIMASI SLIDE RIGHT (UNTUK FORM PREDIKSI) */
+.animate-slide-right {
+    opacity: 0;
+    transform: translateX(100px); /* Mulai dari kanan */
+    transition: all 1s ease-out;
+}
+
+/* KELAS PEMICU (Saat elemen terlihat di layar) */
+.show-animate {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+/* =============================================
+   ANIMASI SLIDER OBESITAS (FIXED)
+============================================= */
+
+/* Animasi Keluar (Geser Kiri) */
+@keyframes slideOutLeft {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-30px); }
+}
+
+/* Animasi Masuk (Geser Kanan) */
+@keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Class Pemicu */
+.anim-out {
+    animation: slideOutLeft 0.3s forwards ease-in;
+}
+
+.anim-in {
+    animation: slideInRight 0.4s forwards ease-out;
+}
+

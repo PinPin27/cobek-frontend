@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>COBEK-v2</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" href="#">COBEK</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#obesitas">Obesitas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#model">Model prediksi</a></li>
+      </ul>
+
+      <a href="#prediksi" class="btn btn-danger ms-lg-3 rounded-pill px-4">Mulai Prediksi</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero-section pt-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 hero-text ps-lg-5">
+        
+        <h5 class="text-danger mb-3">CEK RISIKO OBESITAS KAMU SEKARANG!</h5>
+
+        <h1 class="display-5 fw-bold">
+          Prediksi <span class="text-primary">Obesitas</span> &
+          <span class="text-danger">Analisis Berat</span> Tubuh
+        </h1>
+
+        <p class="mt-3">
+          Hanya butuh satu menit untuk mengetahui kondisi berat tubuhmu dan langkah apa yang bisa kamu ambil selanjutnya. Yuk mulai peduli kesehatan dari sekarang!
+        </p>
+
+        <a href="#prediksi" class="btn btn-danger rounded-pill px-4 py-2 mt-3">
+          Mulai Prediksi
+        </a>
+      </div>
+
+      <div class="col-lg-6 text-lg-end hero-image">
+        <img src="asset/doktor.png" class="img-fluid hero-img" alt="Dokter">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="obesitas" class="obesitas-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- GAMBAR DOKTER (TETAP) -->
+            <div class="col-lg-5 text-center">
+                <img src="asset/obes.png" class="obes-obesitas-img fade-in-up">
+            </div>
+
+            <!-- KARTU OBESITAS -->
+            <div class="col-lg-7">
+                <div class="obesitas-card info fade-in-up">
+                    
+                    <div id="sliderWrapper">
+                        <h2 class="fw-bold mb-3" id="obesitasTitle"></h2>
+                        <div id="obesitasContent"></div>
+                    </div>
+
+                    <div class="obesitas-arrow">
+                      <i class="bi bi-chevron-right arrow-next" id="nextObesitas"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="model" class="dataset-section">
+<div class="dataset-wrapper text-center">
+  <h2 class="fw-bold dataset-title">
+    Bagaimana Cara <span style="color: #1904b9;">COBEK </span> <span style="color: #c00b0b;">Memprediksi?</span>
+  </h2>
+
+  <div class="dataset-cards">
+
+    <!-- CARD 1 -->
+   <div class="ds-card animate-bounce-up delay-1">
+      <img src="asset/dataset-icon.png" alt="Data Set Sampling">
+      <h4>Data Set Sampling</h4>
+
+      <div class="ds-popup">
+        <h5>Data Set Sampling</h5>
+        <p>Data dikumpulkan dari berbagai sumber kemudian dipilih secara acak agar hasil prediksi tidak bias.</p>
+        <div class="ds-arrow"></div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="ds-card animate-bounce-up delay-2">
+      <img src="asset/decision.png" alt="Decision Tree">
+      <h4>Decision Tree</h4>
+
+      <div class="ds-popup">
+        <h5>Decision Tree</h5>
+        <p>Algoritma struktur seperti pohon untuk menentukan keputusan berdasarkan parameter pengguna.</p>
+        <div class="ds-arrow"></div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="ds-card animate-bounce-up delay-3">
+      <img src="asset/random.png" alt="Random Forest">
+      <h4>Random Forest</h4>
+
+      <div class="ds-popup">
+        <h5>Random Forest</h5>
+        <p>Gabungan beberapa decision tree untuk meningkatkan akurasi prediksi.</p>
+        <div class="ds-arrow"></div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+   <div class="ds-card animate-bounce-up delay-4">
+      <img src="asset/bmi.png" alt="BMI">
+      <h4>Rumus BMI</h4>
+
+      <div class="ds-popup">
+        <h5>Rumus BMI</h5>
+        <p>BMI dihitung dari berat badan dan tinggi badan untuk menentukan kategori kondisi tubuh.</p>
+        <div class="ds-arrow"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section id="prediksi" class="predict-section">
+  <div class="container predict-container">
+
+    <!-- Hasil Prediksi -->
+    <div class="predict-result-card animate-slide-left">
+      <h2>Hasil Prediksi</h2>
+      
+      <div id="hasil-prediksi-output" class="d-flex flex-column align-items-center justify-content-center text-center py-4" style="min-height: 200px;">
+    <i class="bi bi-clipboard2-pulse text-secondary mb-3" style="font-size: 4rem; opacity: 0.3;"></i>
+    
+    <h5 class="fw-bold text-muted mb-1">Menunggu Data...</h5>
+    <p class="text-muted small mb-0">
+        Silakan isi formulir di samping untuk<br>melihat hasil analisis kesehatanmu.
+    </p>
+</div>
+    </div>
+
+    <!-- Form Prediksi -->
+<div class="predict-form-card animate-slide-right">
+      <h2>Mulai Prediksi</h2>
+
+      <div class="input-group">
+        <label>Umur (Tahun)</label>
+        <input type="number" id="age" placeholder="Masukkan umur" min="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+      </div>
+
+      <div class="input-group">
+        <label>Gender</label>
+        <select id="gender">
+          <option value="Male">Laki-laki</option>
+          <option value="Female">Perempuan</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Tinggi Badan (cm)</label>
+        <input type="number" id="height" placeholder="Contoh: 170" min="30" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+      </div>
+
+      <div class="input-group">
+        <label>Berat Badan (kg)</label>
+        <input type="number" id="weight" placeholder="Contoh: 65" min="4" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+      </div>
+
+      <button class="predict-btn" onclick="mulaiPrediksi()">Mulai Prediksi</button>
+    </div>
+
+  </div>
+</section>
+
+
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =============== ANIMASI FADE-IN-UP =============== */
+  const elements = document.querySelectorAll(".fade-in-up");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // animasi hanya sekali
+      }
+    });
+  }, { threshold: 0.15 });
+
+  elements.forEach(el => observer.observe(el));
+
+
+  /* =============== NAVBAR ACTIVE SAAT DIKLIK =============== */
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+});
+
+
+// =============== ACTIVE NAVBAR BERDASARKAN SCROLL ===============
+
+const sections = document.querySelectorAll("section[id]");
+const navLinksScroll = document.querySelectorAll(".nav-link");
+
+function activateNavOnScroll() {
+  let scrollY = window.pageYOffset;
+
+  sections.forEach(sec => {
+    const top = sec.offsetTop - 200;  // adjust offset
+    const height = sec.offsetHeight;
+    const id = sec.getAttribute("id");
+
+    if (scrollY >= top && scrollY < top + height) {
+      navLinksScroll.forEach(link => link.classList.remove("active"));
+
+      const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+
+      if (activeLink) {
+        activeLink.classList.add("active");
+      }
+    }
+  });
+}
+window.addEventListener("scroll", activateNavOnScroll);
+</script>
+<script>
+// ====================== SLIDER OBESITAS (FIXED V3) ======================
+const obesitasCards = [
+    {
+        title: 'Apa Itu <span class="text-primary">Obesitas?</span>',
+        html: `
+            <p>
+                Obesitas adalah kondisi medis ketika tubuh memiliki lemak berlebih 
+                yang dapat meningkatkan risiko berbagai penyakit serius. Penyebabnya bukan 
+                hanya pola makan, tetapi juga gaya hidup, genetik, dan lingkungan.
+            </p>
+        `
+    },
+    {
+        title: 'Penyebab <span class="text-danger">Obesitas</span>',
+        html: `
+            <h5><i class="bi bi-people-fill text-primary"></i> Faktor Genetik</h5>
+            <p>Gen memengaruhi bagaimana tubuh menyimpan dan membakar lemak.</p>
+
+            <h5><i class="bi bi-basket-fill text-danger"></i> Pola Makan Berlebih</h5>
+            <p>Konsumsi kalori tinggi tanpa aktivitas seimbang memicu obesitas.</p>
+
+            <h5><i class="bi bi-activity text-warning"></i> Kurang Aktivitas</h5>
+            <p>Gaya hidup sedentari membuat metabolisme menurun drastis.</p>
+
+            <h5><i class="bi bi-exclamation-triangle-fill text-dark"></i> Risiko Penyakit</h5>
+            <p>Obesitas meningkatkan risiko diabetes, hipertensi, jantung, dan stroke.</p>
+        `
+    }
+];
+
+let cardIndex = 0;
+let isAnimating = false;
+
+// 1. Ambil Elemen Wrapper (BUNGKUS TEKS), bukan Kartunya
+const wrapper = document.getElementById("sliderWrapper"); 
+const cardTitle = document.getElementById("obesitasTitle");
+const cardBox = document.getElementById("obesitasContent");
+const nextArrow = document.getElementById("nextObesitas");
+
+// Fungsi Update Konten
+function updateCardContent() {
+    cardTitle.innerHTML = obesitasCards[cardIndex].title;
+    cardBox.innerHTML = obesitasCards[cardIndex].html;
+}
+
+// Event Listener
+nextArrow.addEventListener("click", () => {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    // 2. Animasi Keluar (Pake nama class yang BENAR: anim-out)
+    wrapper.classList.add("anim-out");
+
+    setTimeout(() => {
+        // Ganti Data pas lagi ilang
+        cardIndex = (cardIndex + 1) % obesitasCards.length;
+        updateCardContent();
+
+        // 3. Reset & Animasi Masuk (Pake nama class yang BENAR: anim-in)
+        wrapper.classList.remove("anim-out");
+        wrapper.classList.add("anim-in");
+
+        // 4. Bersihkan Class setelah animasi selesai
+        setTimeout(() => {
+            wrapper.classList.remove("anim-in");
+            isAnimating = false;
+        }, 400);
+
+    }, 300); // Tunggu 0.3 detik sesuai durasi CSS slideOutLeft
+});
+
+// Load awal
+updateCardContent();
+</script>
+
+// Load pertama kali
+updateCardContent();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* 1. ANIMASI SCROLL MASUK (Keep yang ini) */
+  const elements = document.querySelectorAll(".fade-in-up, .animate-bounce-up, .animate-slide-left, .animate-slide-right");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show-animate");
+        
+        // Support animasi lama
+        if (entry.target.classList.contains("fade-in-up")) {
+            entry.target.classList.add("show");
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+
+
+  /* 2. PERBAIKAN SCROLL NAVBAR (INI YANG KEMAREN HILANG MABOY!) */
+  const navbar = document.querySelector(".navbar");
+  
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault(); // Stop lompatan kasar bawaan browser
+
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        const navbarHeight = navbar.offsetHeight;
+        
+        // Kita hitung posisi mendarat yang pas
+        // Offset dikurangi navbarHeight biar gak ketutup, plus kasih napas 20px
+        const offsetPosition = targetSection.offsetTop - navbarHeight - 20;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
+        // Update warna aktif di navbar langsung biar responsif
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+
+});
+</script>
+<script>
+async function mulaiPrediksi() {
+    // 1. Ambil Input
+    const age = document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
+    const height = document.getElementById("height").value;
+    const weight = document.getElementById("weight").value;
+
+    // === VALIDASI INPUT (Gerbang Tol) ===
+    // Cek kosong
+    if (!age || !height || !weight) {
+        alert("Lengkapi datanya dulu ya Maboy! 😉");
+        return;
+    }
+
+    // Cek Minus atau Nol (Satpam bertindak!)
+    if (age <= 0 || height <= 0 || weight <= 0) {
+        alert("Waduh, angka tidak boleh 0 atau minus ya Maboy! 😅");
+        return; // Stop proses, jangan kirim ke server
+    }
+
+    document.getElementById("hasil-prediksi-output").innerHTML = `
+        <div class="d-flex flex-column align-items-center justify-content-center py-5">
+            <div class="spinner-border text-danger" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="text-muted mt-3 fw-bold">Sedang Menganalisis... 🤖</p>
+        </div>
+    `;
+    try {
+        // 2. Kirim ke Python
+        const response = await fetch("http://127.0.0.1:5000/predict", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ age, gender, height, weight })
+        });
+
+        const result = await response.json();
+        const kategoriText = result.RandomForest; 
+        
+        let saran = "";
+        let themeClass = ""; 
+        let iconUrl = "";   
+
+        // === LOGIKA TAMPILAN (Sesuai request sebelumnya) ===
+        
+        // 1. OBESITAS (Semua tipe pakai 1 gambar)
+        if (kategoriText.includes("Obesity") || kategoriText.includes("Obese")) {
+            iconUrl = "asset/obesitas.png"; 
+            
+            if (kategoriText.includes("Type III")) {
+                themeClass = "theme-darkred"; 
+            } else {
+                themeClass = "theme-red";
+            }
+
+            saran = `
+                <p>Status kamu: <b>${kategoriText}</b>.</p>
+                <ul>
+                  <li>Kurangi asupan kalori harian dan gula.</li>
+                  <li>Wajib olahraga kardio minimal 30 menit sehari.</li>
+                  <li>Konsultasi ke dokter gizi sangat disarankan.</li>
+                </ul>
+            `;
+        } 
+        // 2. OVERWEIGHT
+        else if (kategoriText.includes("Overweight")) {
+            iconUrl = "asset/over.png";
+            themeClass = "theme-orange";
+            saran = `
+                <p>Status kamu: <b>Overweight</b>.</p>
+                <ul>
+                  <li>Kurangi gorengan dan makan malam larut.</li>
+                  <li>Perbanyak aktivitas fisik.</li>
+                  <li>Ganti cemilan dengan buah.</li>
+                </ul>
+            `;
+        }
+        // 3. NORMAL
+        else if (kategoriText.includes("Normal")) {
+            iconUrl = "asset/normal.png";
+            themeClass = "theme-green";
+            saran = `
+                <p>Mantap! Berat badanmu <b>Normal</b>.</p>
+                <ul>
+                  <li>Pertahankan pola hidup sehatmu.</li>
+                  <li>Minum air putih cukup dan tidur teratur.</li>
+                </ul>
+            `;
+        }
+        // 4. UNDERWEIGHT
+        else {
+            iconUrl = "asset/under.png";
+            themeClass = "theme-orange";
+            saran = `
+                <p>Status kamu: <b>Underweight</b>.</p>
+                <ul>
+                  <li>Makan lebih sering dengan porsi gizi padat.</li>
+                  <li>Tambah asupan protein dan karbohidrat.</li>
+                </ul>
+            `;
+        }
+
+        // TAMPILKAN HASIL
+        document.getElementById("hasil-prediksi-output").innerHTML = `
+          <div class="hasil-box">
+            <div class="hasil-utama">
+                <div class="hasil-icon-wrapper">
+                    <img src="${iconUrl}" class="hasil-icon" onerror="this.style.display='none'" alt="${kategoriText}">
+                </div>
+                <h3 class="kategori ${themeClass}">${kategoriText}</h3>
+                <p class="bmi">BMI kamu: <b>${result.BMI}</b></p>
+            </div>
+            <div class="hasil-saran">
+                <hr>
+                <h4 class="${themeClass}">💡 Saran:</h4>
+                ${saran}
+            </div>
+          </div>
+        `;
+
+    } catch (error) {
+        console.error(error);
+        alert("Server error nih Maboy! Cek terminal ya.");
+        document.getElementById("hasil-prediksi-output").innerHTML = `<p class="placeholder">Gagal memuat prediksi.</p>`;
+    }
+}
+</script>
+
+
+
+</body>
+</html>
