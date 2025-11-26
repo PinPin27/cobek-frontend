@@ -647,19 +647,27 @@ body {
     color: #333;
 }
 
+.hasil-saran {
+    text-align: left !important; /* Paksa rata kiri */
+    margin-top: 20px;
+}
+
 .hasil-saran h4 {
     font-size: 20px;
     margin-bottom: 10px;
     font-weight: 600;
     color: #1904b9;
+    text-align: left !important; /* Paksa judul saran rata kiri */
 }
 
 .hasil-saran ul {
     padding-left: 20px;
+    text-align: left !important; /* Paksa list rata kiri */
 }
 
 .hasil-saran li {
     margin-bottom: 6px;
+    text-align: left !important; /* Paksa item list rata kiri */
 }
 /* =============================================
    UPDATE VISUAL: IKON & WARNA KATEGORI
