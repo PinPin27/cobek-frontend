@@ -757,57 +757,62 @@ body {
 }
 
 /* =========================================
-   FIX TAMPILAN HP (MOBILE RESPONSIVE)
-   Taruh ini di baris paling bawah style.css
+   FIX TAMPILAN HP (MOBILE RESPONSIVE V2)
+   Versi "Paksa Diet" Maboy
 ========================================= */
 
 @media (max-width: 991px) {
-  /* 1. Navbar Lebih Langsing */
+  
+  /* 1. RESET ID HOME (Ini Biang Keroknya!) */
+  #home {
+    padding-top: 20px !important; /* Timpa 100px desktop */
+    margin-top: 70px !important;  /* Jarak dari navbar */
+  }
+
+  /* 2. Navbar Langsing */
   .navbar {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
-    min-height: 60px; /* Tinggi navbar dikecilin */
-  }
-
-  /* 2. Ukuran Logo Disesuaikan */
-  .navbar-brand {
-    font-size: 1.4rem !important;
-  }
-
-  /* 3. Hero Section Dinaikkan */
-  .hero-section {
-    margin-top: 70px !important; /* Jarak dari atap dikurangi */
-    padding-top: 30px !important; /* Jarak dalam dikurangi */
-    text-align: center; /* Teks jadi rata tengah biar rapi di HP */
+    min-height: 60px !important;
   }
   
-  /* 4. Judul & Paragraf di HP */
+  .navbar-brand {
+    font-size: 1.4rem !important; /* Logo agak kecil */
+  }
+
+  /* 3. Hero Section Rata Tengah */
+  .hero-section {
+    text-align: center !important; 
+    padding-top: 0 !important; /* Reset padding class */
+  }
+
+  /* 4. Judul & Paragraf */
   .hero-section h1 {
-    font-size: 2.2rem; /* Judul agak dikecilin dikit */
+    font-size: 2rem !important; /* Font judul pas di HP */
+    line-height: 1.3;
+    margin-bottom: 15px;
   }
   
   .hero-section p {
-    text-align: center; /* Paragraf rata tengah */
-    font-size: 1rem;
+    text-align: center !important; /* Paksa rata tengah */
+    font-size: 0.95rem !important;
+    padding: 0 10px; /* Kasih napas kiri-kanan */
   }
 
-  /* 5. Gambar Dokter */
+  /* 5. Tombol Navbar (Hamburger) */
+  .navbar-toggler {
+    border: none !important;
+    padding: 5px !important;
+  }
+  
+  /* 6. Gambar Dokter */
   .hero-image {
-    margin-top: 30px;
+    margin-top: 30px !important;
     text-align: center !important;
   }
   
   .hero-img {
-    max-width: 70%; /* Gambar dokter diperkecil biar gak penuh banget */
-  }
-
-  /* 6. Tombol Login/Menu di Navbar */
-  .navbar-toggler {
-    border: none; /* Hilangkan garis kotak tombol menu */
-    padding: 0;
-  }
-  
-  .navbar-toggler:focus {
-    box-shadow: none; /* Hilangkan glow biru pas diklik */
+    max-width: 65% !important; /* Gambar gak kegedean */
+    margin: 0 auto;
   }
 }
