@@ -756,3 +756,58 @@ body {
     animation: slideInRight 0.4s forwards ease-out;
 }
 
+/* =========================================
+   FIX TAMPILAN HP (MOBILE RESPONSIVE)
+   Taruh ini di baris paling bawah style.css
+========================================= */
+
+@media (max-width: 991px) {
+  /* 1. Navbar Lebih Langsing */
+  .navbar {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    min-height: 60px; /* Tinggi navbar dikecilin */
+  }
+
+  /* 2. Ukuran Logo Disesuaikan */
+  .navbar-brand {
+    font-size: 1.4rem !important;
+  }
+
+  /* 3. Hero Section Dinaikkan */
+  .hero-section {
+    margin-top: 70px !important; /* Jarak dari atap dikurangi */
+    padding-top: 30px !important; /* Jarak dalam dikurangi */
+    text-align: center; /* Teks jadi rata tengah biar rapi di HP */
+  }
+  
+  /* 4. Judul & Paragraf di HP */
+  .hero-section h1 {
+    font-size: 2.2rem; /* Judul agak dikecilin dikit */
+  }
+  
+  .hero-section p {
+    text-align: center; /* Paragraf rata tengah */
+    font-size: 1rem;
+  }
+
+  /* 5. Gambar Dokter */
+  .hero-image {
+    margin-top: 30px;
+    text-align: center !important;
+  }
+  
+  .hero-img {
+    max-width: 70%; /* Gambar dokter diperkecil biar gak penuh banget */
+  }
+
+  /* 6. Tombol Login/Menu di Navbar */
+  .navbar-toggler {
+    border: none; /* Hilangkan garis kotak tombol menu */
+    padding: 0;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none; /* Hilangkan glow biru pas diklik */
+  }
+}
