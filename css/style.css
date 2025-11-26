@@ -757,62 +757,113 @@ body {
 }
 
 /* =========================================
-   FIX TAMPILAN HP (MOBILE RESPONSIVE V2)
-   Versi "Paksa Diet" Maboy
+   FIX TAMPILAN HP (MOBILE FINAL V3)
+   Versi "Operasi Plastik" Biar Langsing
 ========================================= */
 
 @media (max-width: 991px) {
   
-  /* 1. RESET ID HOME (Ini Biang Keroknya!) */
-  #home {
-    padding-top: 20px !important; /* Timpa 100px desktop */
-    margin-top: 70px !important;  /* Jarak dari navbar */
-  }
-
-  /* 2. Navbar Langsing */
+  /* --- 1. NAVBAR & LAYOUT --- */
   .navbar {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding: 10px 0 !important; /* Rapatkan navbar */
     min-height: 60px !important;
   }
   
   .navbar-brand {
-    font-size: 1.4rem !important; /* Logo agak kecil */
+    font-size: 1.3rem !important; /* Kecilin logo */
   }
 
-  /* 3. Hero Section Rata Tengah */
+  /* --- 2. HERO SECTION (HOME) --- */
+  #home {
+    padding-top: 20px !important;
+    margin-top: 60px !important;
+  }
+
   .hero-section {
     text-align: center !important; 
-    padding-top: 0 !important; /* Reset padding class */
+    padding-top: 0 !important;
   }
 
-  /* 4. Judul & Paragraf */
   .hero-section h1 {
-    font-size: 2rem !important; /* Font judul pas di HP */
+    font-size: 1.8rem !important; /* Judul lebih kecil */
     line-height: 1.3;
-    margin-bottom: 15px;
   }
   
   .hero-section p {
-    text-align: center !important; /* Paksa rata tengah */
-    font-size: 0.95rem !important;
-    padding: 0 10px; /* Kasih napas kiri-kanan */
+    text-align: center !important;
+    font-size: 0.9rem !important;
+    padding: 0 15px; /* Kasih jarak pinggir */
   }
 
-  /* 5. Tombol Navbar (Hamburger) */
-  .navbar-toggler {
-    border: none !important;
-    padding: 5px !important;
-  }
-  
-  /* 6. Gambar Dokter */
-  .hero-image {
-    margin-top: 30px !important;
-    text-align: center !important;
-  }
-  
   .hero-img {
-    max-width: 65% !important; /* Gambar gak kegedean */
-    margin: 0 auto;
+    max-width: 60% !important; /* Dokter jadi mungil */
+    margin: 20px auto 0;
+  }
+
+  /* --- 3. SECTION OBESITAS (YANG KEGEDEAN) --- */
+  .obes-obesitas-img {
+    left: 0 !important; /* Reset posisi aneh */
+    max-height: 250px !important; /* Batasi tinggi gambar */
+    width: auto;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .obesitas-card, .obesitas-card.info {
+    min-height: auto !important; /* Tinggi otomatis ikut isi */
+    padding: 25px 20px !important; /* Padding dikurangi drastis */
+    margin: 0 10px; /* Kasih jarak aman kiri kanan */
+  }
+
+  #obesitasTitle {
+    font-size: 1.5rem; /* Judul kartu dikecilin */
+  }
+
+  /* Panah Geser ke Bawah */
+  .obesitas-arrow {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .arrow-next {
+    position: static;
+    font-size: 35px;
+  }
+
+  /* --- 4. PREDIKSI (BIANG KEROK 400px) --- */
+  .predict-container {
+    gap: 30px; /* Jarak antar kartu dikurangi */
+  }
+
+  /* INI KUNCI PERBAIKANNYA MABOY 👇 */
+  .predict-form-card, 
+  .predict-result-card {
+    width: 100% !important; /* Jangan 400px, tapi ikut layar! */
+    max-width: 100%;       /* Pastikan gak bablas */
+    padding: 25px 20px !important; /* Padding dalem dirapetin */
+  }
+
+  .input-group label {
+    font-size: 0.9rem;
+  }
+
+  .predict-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+  
+  /* --- 5. DATASET CARDS --- */
+  .dataset-cards {
+    margin-top: 50px !important; /* Kurangi jarak atas */
+    gap: 20px;
+  }
+  
+  .ds-card {
+    width: 100%; /* Kartu dataset jadi lebar penuh di HP */
+    max-width: 320px; /* Tapi jangan kegedean banget */
   }
 }
